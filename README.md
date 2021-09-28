@@ -14,7 +14,7 @@ Also, it is presented with a 5-day forecast that displays the date, an icon repr
 If the user clicks on a city in the search history, then the user is again presented with current and future conditions for that city.
 
 
-The website is published at 
+The website is published at https://ivonnor1975.github.io/myweather/
 
 Built With HTML, CSS,bootstrap, Java Script, Moment.js and Jquery.
 

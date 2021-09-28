@@ -8,46 +8,77 @@
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Git it Done</title>
+  <title>My Weather</title>
 </head>
 
 <body class="flex-column min-100-vh">
   <header class="hero">
-    <h1 class="app-title"><i class="fab fa-github"></i> Git it Done!</h1>
-    <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
-    </p>
+    <h1 class="app-title">Weather Dashboard</h1>
   </header>
 
 
   <main class="flex-row justify-space-between">
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-3">
       <div class="card">
-        <h3 class="card-header text-uppercase">Search By User</h3>
+        <h3 class="card-header">Search for a City</h3>
         <form id="user-form" class="card-body">
-          <label class="form-label" for="username">Username</label>
-          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Get User</button>
-        </form>
+          <label class="form-label" for="cityname"></label>
+          <input name="cityname" id="cityname" type="text" autofocus="true" class="form-input" placeholder="Houston, Texas" />
+          <button type="submit" class="btn">Search</button>
+        </form>s
       </div>
-
       <div class="card">
-        <h3 class="card-header text-uppercase">Search By Topic</h3>
-        <div id="language-buttons" class="card-body">
-          <button data-language="javascript" class="btn">JavaScript</button>
-          <button data-language="html" class="btn">HTML</button>
-          <button data-language="css" class="btn">CSS</button>
+        <h3 class="card-header">Search By Topic</h3>
+            <div id="city-buttons" class="card-body">
+                <button data-city="London" class="btn">London</button>
+            </div>
         </div>
-      </div>
+     </div>
+     <div class="col-12 col-md-9">
+        <div class="card">
+          <h2 class="subtitle">City:<span id="repo-search-term"></span></h2>
+          <h3 class="items">Temp: <span id="temp" ></span></h3>
+          <h3 class="items">Wind: <span id="wind" ></span></h3>
+          <h3 class="items">Humity: <span id="humity" ></span></h3>
+          <h3 class="items">UV Index: <span id="uvindex" ></span></h3>
+        </div>
+      </div> 
+      <div class="col-12 col-md-2">
+              <div class="col-2">
+                    <h2 class="subtitle">Date:  <span id="day0" ></span></h2>
+                    <h3 class="items">Temp: <span id="temp0" ></span></h3>
+                    <h3 class="items">Wind: <span id="wind0" ></span></h3>
+                    <h3 class="items">Humity: <span id="humity0" ></span></h3>
+             </div>
+             <div class="col-2">
+                    <h2 class="subtitle">Date:  <span id="day1" ></span></h2>
+                    <h3 class="items">Temp: <span id="temp1" ></span></h3>
+                    <h3 class="items">Wind: <span id="wind1" ></span></h3>
+                    <h3 class="items">Humity: <span id="humity1" ></span></h3>
+              </div>
+              <div class="col-2">
+                <h2 class="subtitle">Date:  <span id="day2" ></span></h2>
+                <h3 class="items">Temp: <span id="temp2" ></span></h3>
+                <h3 class="items">Wind: <span id="wind2" ></span></h3>
+                <h3 class="items">Humity: <span id="humity2" ></span></h3>
+              </div>
+                <div class="col-2">
+                  <h2 class="subtitle">Date:  <span id="day3" ></span></h2>
+                  <h3 class="items">Temp: <span id="temp3" ></span></h3>
+                  <h3 class="items">Wind: <span id="wind3" ></span></h3>
+                  <h3 class="items">Humity: <span id="humity3" ></span></h3>
+             </div>
+              <div class="col-2">
+                <h2 class="subtitle">Date:  <span id="day4" ></span></h2>
+                <h3 class="items">Temp: <span id="temp4" ></span></h3>
+                <h3 class="items">Wind: <span id="wind4" ></span></h3>
+                <h3 class="items">Humity: <span id="humity4"></span></h3>
+              </div>
+        </div>
     </div>
-
-    <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
-      <div id="repos-container" class="list-group">
-
       </div>
-    </div>
   </main>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/homepage.js"></script>
 </body>
 

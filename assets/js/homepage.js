@@ -29,6 +29,8 @@ var getcity = function(city) {
       if (response.ok) {
           response.json().then(function(data) {
           //create buttons and save locations
+          createBtns(data.coord.lat, data.coord.lon, data.name);
+          //retrieve weather based on lon and Lat
           getmoredetails(data.coord.lat, data.coord.lon, data.name);
         });
       } else {
@@ -48,8 +50,7 @@ var getmoredetails = function(citylat, citylon,cityname) {
     // request was successful
     if (response.ok) {
       response.json().then(function(data) {
-        console.log(data);
-        debugger;
+        //console.log(data);
         repoSearchTerm.textContent = cityname + " ( "+dia+")";
         //Current weather
         icon.src="https://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png";
@@ -93,6 +94,18 @@ var getmoredetails = function(citylat, citylon,cityname) {
     }
   });
 };
+
+var createBtns=function(citylat, citylon,cityname){
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.textContent = cityname;
+      button.className = 'btn';
+      button.setAttribute("data-lat", citylat);
+      button.setAttribute("data-lon", citylon);
+      button.setAttribute("data-city", cityname);
+      var container = document.getElementById('city-buttons');
+      container.appendChild(button);
+  }
 
 //load preload data
 var buttonClickHandler = function(event) {

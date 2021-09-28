@@ -42,11 +42,7 @@ h2
 h3
 {
   font-weight: 700;
-  margin: 0;
-  margin-left: 3%;
-  margin-right: 1%;
   color: var(--primary);
-  padding-bottom: 1%;
   line-height: 2;
 }
 
@@ -55,11 +51,7 @@ main {
   width: 94%;
 }
 
-p {
-  font-size: 1.2rem;
-}
-
- .btn {
+.btn {
   font-size: 1.3rem;
   text-decoration:none;
   padding: 6px 5px;
@@ -83,7 +75,7 @@ p {
 }
 
 .hero {
-  padding: 3% 4%;
+  padding: 2% 3%;
   color: var(--primary);
   text-align: center;
   background: linear-gradient(90deg, var(--color2) 40%, var(--color4));
@@ -121,6 +113,7 @@ p {
 }
 
 .weather{
+  padding: 1%;
   background-color: var(--cardcolor);
   color: var(--primary)
   }

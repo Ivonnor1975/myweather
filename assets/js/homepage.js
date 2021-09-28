@@ -48,7 +48,8 @@ var getmoredetails = function(citylat, citylon,cityname) {
     // request was successful
     if (response.ok) {
       response.json().then(function(data) {
-        //console.log(data);
+        console.log(data);
+        debugger;
         repoSearchTerm.textContent = cityname + " ( "+dia+")";
         //Current weather
         icon.src="https://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png";
@@ -97,8 +98,11 @@ var getmoredetails = function(citylat, citylon,cityname) {
 var buttonClickHandler = function(event) {
   // get the city attribute from the clicked element
   var city = event.target.getAttribute("data-city");
+
   if (city) {
-    //getmoredetails = function(clat, clon,city);
+     var clat=event.target.getAttribute("data-lat");
+     var clon=event.target.getAttribute("data-lon");
+     getmoredetails(clat, clon,city);
   }
 };
 // add event listeners to form and button container

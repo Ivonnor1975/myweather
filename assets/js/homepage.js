@@ -3,22 +3,45 @@ var userFormEl = document.querySelector("#user-form");
 var cityButtonsEl = document.querySelector("#city-buttons");
 var nameInputEl = document.querySelector("#cityname");
 var repoSearchTerm = document.querySelector("#repo-search-term");
+var cities= []; 
+
+//load page first time
+var loadCities=function(){
+  cities = [];  //initialize array
+  // read from local storage
+  cities = JSON.parse(localStorage.getItem("cities"));
+  if (cities) { //if a city has been saved on local storage then         
+        //loop over array to recreate tasks on the webpage
+          $.each(cities, function(index,cities){
+            //recreate buttons for each city
+            var button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = cities.cname;
+            button.className = 'btn';
+            button.setAttribute("data-lat", cities.clat);
+            button.setAttribute("data-lon", cities.clon);
+            button.setAttribute("data-city", cities.cname);
+            var container = document.getElementById('city-buttons');
+            container.appendChild(button);
+     });
+  };
+}
 
 //if a new city is submitted
 var formSubmitHandler = function(event) {
-  // prevent page from refreshing
-  event.preventDefault();
-  // get value from input element
-  var cityname = nameInputEl.value.trim();
-  if (cityname) {
-    getcity(cityname);
-    nameInputEl.value = "";
-  } else {
-    alert("Please enter a city");
-  }
+      // prevent page from refreshing
+      event.preventDefault();
+      // get value from input element
+      var cityname = nameInputEl.value.trim();
+      if (cityname) {
+        getcity(cityname);
+        nameInputEl.value = "";
+      } else {
+        alert("Please enter a city");
+      }
 };
 
-//load city to get latitud and longitud
+//load city to get latitud and longitud to be able to display 5 days 
 var getcity = function(city) {
   // format the weather api url by city
   var apiUrl=  "https://api.openweathermap.org/data/2.5/weather?q="+city+"&units=imperial&APPID=126a080714e51ffd3ce7f4eabeb126fc";
@@ -28,12 +51,27 @@ var getcity = function(city) {
       // request was successful
       if (response.ok) {
           response.json().then(function(data) {
-          //create buttons and save locations
-          createBtns(data.coord.lat, data.coord.lon, data.name);
+          //create buttons and save locations if city does not exist previously
+          if (!cities){  //if it is first city that is going to be added 
+            cities= [];
+            createBtns(data.coord.lat, data.coord.lon, data.name);
+          }
+          else{
+            //search on array if city already exist 
+            var index = -1;
+            for(let y=0; y < cities.length; y++){
+                    if (cities[y].cname===data.name){
+                        index=y;
+                    };
+            };
+            if (index < 0){  //the task does not previously exist. adding new task
+                createBtns(data.coord.lat, data.coord.lon, data.name);
+            }; 
+          }
           //retrieve weather based on lon and Lat
           getmoredetails(data.coord.lat, data.coord.lon, data.name);
         });
-      } else {
+      } else { //api response returned errors
         alert("Error: " + response.statusText);
       }
     })
@@ -41,6 +79,13 @@ var getcity = function(city) {
       alert("Unable to connect to Weather Web site");
     });
 };
+
+//save array to local storage
+var saveCities = function() {
+  localStorage.setItem("cities", JSON.stringify(cities));
+};
+
+
 //using lat and lon, get all info for current day and next 5 days
 var getmoredetails = function(citylat, citylon,cityname) {
   // format the github api url
@@ -95,7 +140,9 @@ var getmoredetails = function(citylat, citylon,cityname) {
   });
 };
 
+//create buttons and save new cities on array 
 var createBtns=function(citylat, citylon,cityname){
+      //diplay buttons
       var button = document.createElement('button');
       button.type = 'button';
       button.textContent = cityname;
@@ -105,19 +152,30 @@ var createBtns=function(citylat, citylon,cityname){
       button.setAttribute("data-city", cityname);
       var container = document.getElementById('city-buttons');
       container.appendChild(button);
-  }
+      //prepare to save on local storage
+      var cityDataObj = {
+        cname: cityname,
+        clon: citylon,
+        clat: citylat
+      };
+      cities.push(cityDataObj);
+      saveCities(); //go to save on local storage
+ };
 
-//load preload data
+
+//load data from previously saved cities 
 var buttonClickHandler = function(event) {
   // get the city attribute from the clicked element
   var city = event.target.getAttribute("data-city");
-
   if (city) {
      var clat=event.target.getAttribute("data-lat");
      var clon=event.target.getAttribute("data-lon");
-     getmoredetails(clat, clon,city);
+     getmoredetails(clat, clon,city); //go to display info on screen
   }
 };
 // add event listeners to form and button container
 userFormEl.addEventListener("submit", formSubmitHandler);
 cityButtonsEl.addEventListener("click", buttonClickHandler);
+
+// load cities for the first time if any
+loadCities();

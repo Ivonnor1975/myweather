@@ -17,7 +17,7 @@
   </header>
   <main class="flex-row justify-space-between">
       <div class="col-12 col-md-3">
-          <div class="card">
+          <div class="card"> <!--use to display search form-->
               <h2 class="card-header">Search for a City</h2>
               <form id="user-form" class="card-body">
                 <label class="form-label" for="cityname"></label>
@@ -25,15 +25,15 @@
                 <button type="submit" class="btn">Search</button>
               </form>
           </div>
-          <div class="card">
+          <div class="card"> 
                 <div id="city-buttons" class="card-body">
-                    <button data-lat="29.7633" data-lon="-95.3633" data-city="Houston" class="btn">Houston</button>
+                    <!--city buttons will be added here -->
                 </div>
           </div>
       </div>
-      <div class="col-12 col-md-9">
+      <div class="col-12 col-md-9">  <!--use to display weather info-->
           <div class="card">
-                <h2 class="subtitle">City:<span id="repo-search-term"></span></h2>
+                <h2 class="subtitle"><span id="repo-search-term"></span></h2>
                 <img src="" alt="" class=item id="icon"></img>
                 <h2 class="items">Temp: <span id="temp" ></span></h2>
                 <h2 class="items">Wind: <span id="wind" ></span></h2>
@@ -42,35 +42,35 @@
           </div>
           <h2 class="subtitle">5-Day Forecast:</h2>
           <div class="flex-row justify-space-between">
-                <div class="col-md-2">
+                <div class="card weather">
                       <h3 class="subtitle"><span id="day0" ></span></h2>
                       <img src="" alt="" class=item id="icon0"></img>
                       <h3 class="items">Temp: <span id="temp0" ></span></h3>
                       <h3 class="items">Wind: <span id="wind0" ></span></h3>
                       <h3 class="items">Humity: <span id="humity0" ></span></h3>
                 </div>
-                <div class="col-md-2">
+                <div class="card weather">
                       <h3 class="subtitle"><span id="day1" ></span></h2>
                       <img src="" alt="" class=item id="icon1"></img>
                       <h3 class="items">Temp: <span id="temp1" ></span></h3>
                       <h3 class="items">Wind: <span id="wind1" ></span></h3>
                       <h3 class="items">Humity: <span id="humity1" ></span></h3>
                 </div>
-                <div class="col-md-2">
+                <div class="card weather">
                       <h3 class="subtitle"><span id="day2" ></span></h2>
                       <img src="" alt="" class=item id="icon2"></img>
                       <h3 class="items">Temp: <span id="temp2" ></span></h3>
                       <h3 class="items">Wind: <span id="wind2" ></span></h3>
                       <h3 class="items">Humity: <span id="humity2" ></span></h3>
                 </div>
-                <div class="col-md-2">
+                <div class="card weather">
                       <h3 class="subtitle"><span id="day3" ></span></h2>
                       <img src="" alt="" class=item id="icon3"></img>
                       <h3 class="items">Temp: <span id="temp3" ></span></h3>
                       <h3 class="items">Wind: <span id="wind3" ></span></h3>
                       <h3 class="items">Humity: <span id="humity3" ></span></h3>
                 </div>
-                <div class="col-md-2">
+                <div class="card weather">
                       <h3 class="subtitle"><span id="day4" ></span></h3>
                       <img src="" alt="" class=item id="icon4"></img>
                       <h3 class="items">Temp: <span id="temp4" ></span></h3>
@@ -80,6 +80,7 @@
            </div> 
         </div>  
   </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="./assets/js/homepage.js"></script>
 </body>

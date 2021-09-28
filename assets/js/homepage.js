@@ -99,38 +99,38 @@ var getmoredetails = function(citylat, citylon,cityname) {
         repoSearchTerm.textContent = cityname + " ( "+dia+")";
         //Current weather
         icon.src="https://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png";
-        temp.textContent = data.current.temp+"F";
+        temp.textContent = data.current.temp+" °F";
         wind.textContent = data.current.wind_speed+"MPH";
         humity.textContent = data.current.humidity+"%";
         uvindex.textContent= data.current.uvi;
         //Next five days-day 1
         day0.textContent= moment().add(1, 'days').format('l');
         icon0.src="https://openweathermap.org/img/wn/"+data.daily[0].weather[0].icon+"@2x.png";
-        temp0.textContent = data.daily[0].temp.day+"F";
+        temp0.textContent = data.daily[0].temp.day+"°F";
         wind0.textContent = data.daily[0].wind_speed+"MPH";
         humity0.textContent = data.daily[0].humidity+"%";
         //day2
         day1.textContent= moment().add(2, 'days').format('l');
         icon1.src="https://openweathermap.org/img/wn/"+data.daily[1].weather[0].icon+"@2x.png";
-        temp1.textContent = data.daily[1].temp.day+"F";
+        temp1.textContent = data.daily[1].temp.day+" °F";
         wind1.textContent = data.daily[1].wind_speed+"MPH";
         humity1.textContent = data.daily[1].humidity+"%";
         //day 3
         day2.textContent= moment().add(3, 'days').format('l');
         icon2.src="https://openweathermap.org/img/wn/"+data.daily[2].weather[0].icon+"@2x.png";
-        temp2.textContent = data.daily[2].temp.day+"F";
+        temp2.textContent = data.daily[2].temp.day+" °F";
         wind2.textContent = data.daily[2].wind_speed+"MPH";
         humity2.textContent = data.daily[2].humidity+"%";
         //day 4
         day3.textContent= moment().add(4, 'days').format('l');
         icon3.src="https://openweathermap.org/img/wn/"+data.daily[3].weather[0].icon+"@2x.png";
-        temp3.textContent = data.daily[3].temp.day+"F";
+        temp3.textContent = data.daily[3].temp.day+" °F";
         wind3.textContent = data.daily[3].wind_speed+"MPH";
         humity3.textContent = data.daily[3].humidity+"%";
         //day 5
         day4.textContent= moment().add(5, 'days').format('l');
         icon4.src="https://openweathermap.org/img/wn/"+data.daily[4].weather[0].icon+"@2x.png";
-        temp4.textContent = data.daily[4].temp.day+"F";
+        temp4.textContent = data.daily[4].temp.day+" °F";
         wind4.textContent = data.daily[4].wind_speed+"MPH";
         humity4.textContent = data.daily[4].humidity+"%";
       });

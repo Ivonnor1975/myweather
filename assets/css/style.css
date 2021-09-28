@@ -55,11 +55,6 @@ main {
   width: 94%;
 }
 
-.col-md-2{
-background-color: var(--cardcolor);
-color: var(--primary)
-}
-
 p {
   font-size: 1.2rem;
 }
@@ -87,33 +82,6 @@ p {
   box-shadow: 2px 2px var(--dark);
 }
 
-.btn-inline {
-  display: inline;
-}
-
-.btn-back {
-  border-radius: var(--border-radius);
-  color: var(--primary);
-  border: none;
-  outline: none;
-  background-color: var(--light-dark);
-  box-shadow: 3px 3px var(--secondary);
-  transform: translate(-1px, -1px);
-  display: inline-block;
-  width: auto;
-  margin-top: 20px;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
- .btn-back:hover {
-  color: var(--primary);
-  background-color: var(--tertiary);
-  transform: translate(0, 0);
-  box-shadow: 2px 2px var(--dark);
-}
-
 .hero {
   padding: 3% 4%;
   color: var(--primary);
@@ -134,22 +102,6 @@ p {
   border-radius: var(--border-radius);
   box-shadow: 6px 5px var(--light-dark);
 }
-
-.list-group {
-  padding: 0;
-  list-style: none;
-}
-
-.list-item {
-  margin-bottom: 10px;
-  padding: 1.5%;
-  border-radius: var(--border-radius);
-  background-color: var(--light-dark);
-  color: var(--primary);
-  text-decoration: none;
-}
-
-
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
@@ -167,6 +119,11 @@ p {
 .card-body {
   padding: 2.5%;
 }
+
+.weather{
+  background-color: var(--cardcolor);
+  color: var(--primary)
+  }
 
 /* FORM */
 .form-label,
@@ -197,12 +154,6 @@ p {
 .min-100-vw {
   min-width: 100vw;
 }
-
-/* FONT UTILS */
-.text-uppercase {
-  text-transform: uppercase;
-}
-
 
 /* FLEX CONTENT */
 .flex-row {

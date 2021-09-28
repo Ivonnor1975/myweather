@@ -2,9 +2,12 @@
   --primary: white;
   --secondary: #9caea9;
   --tertiary: #788585;
-  --light-dark: #6f6866;
+  --light-dark:  rgb(29, 153, 255);
   --dark: #38302e;
   --border-radius: .3rem;
+  --cardcolor: navy;
+  --color2: #33F2C4;
+  --color4: #5312E4;
 }
 
 * {
@@ -22,20 +25,33 @@ body {
 }
 
 h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2
+{
   font-weight: 700;
   margin: 0;
+  margin-left: 1%;
+  padding-bottom: 1%;
   color: var(--dark);
   line-height: 1.25;
+}
+h3
+{
+  font-weight: 700;
+  margin: 0;
+  margin-left: 3%;
+  color: var(--primary);
+  padding-bottom: 1%;
+  line-height: 2;
 }
 
 main {
   margin: 20px auto;
   width: 94%;
+}
+
+.col-md-2{
+background-color: var(--cardcolor);
+color: var(--primary)
 }
 
 p {
@@ -94,8 +110,9 @@ p {
 
 .hero {
   padding: 3% 4%;
-  background-color: var(--dark);
   color: var(--primary);
+  text-align: center;
+  background: linear-gradient(90deg, var(--color2) 40%, var(--color4));
 }
 
 .hero p {
@@ -126,24 +143,6 @@ p {
   text-decoration: none;
 }
 
-.list-item:hover {
-  background-color: var(--dark);
-}
-
-.status-icon {
-  padding: 2px 5px;
-  margin: 0 5px;
-  background-color: rgba(255,255,255, 1);
-  border-radius: var(--border-radius);
-}
-
-.icon-danger {
-  color: rgb(255, 70, 70);
-}
-
-.icon-success {
-  color: rgb(29, 153, 255);
-}
 
 /* CARDS */
 .card {

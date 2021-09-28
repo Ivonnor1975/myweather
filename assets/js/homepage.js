@@ -64,21 +64,21 @@ var getmoredetails = function(citylat, citylon,cityname) {
         wind0.textContent = data.daily[0].wind_speed+"MPH";
         humity0.textContent = data.daily[0].humidity+"%";
         //date1.textContent= 
-        temp0.textContent = data.daily[1].temp.day+"F";
-        wind0.textContent = data.daily[1].wind_speed+"MPH";
-        humity0.textContent = data.daily[1].humidity+"%";
+        temp1.textContent = data.daily[1].temp.day+"F";
+        wind1.textContent = data.daily[1].wind_speed+"MPH";
+        humity1.textContent = data.daily[1].humidity+"%";
         //date2.textContent= 
-        temp0.textContent = data.daily[2].temp.day+"F";
-        wind0.textContent = data.daily[2].wind_speed+"MPH";
-        humity0.textContent = data.daily[2].humidity+"%";
+        temp2.textContent = data.daily[2].temp.day+"F";
+        wind2.textContent = data.daily[2].wind_speed+"MPH";
+        humity2.textContent = data.daily[2].humidity+"%";
         //date3.textContent= 
-        temp0.textContent = data.daily[3].temp.day+"F";
-        wind0.textContent = data.daily[3].wind_speed+"MPH";
-        humity0.textContent = data.daily[3].humidity+"%";
+        temp3.textContent = data.daily[3].temp.day+"F";
+        wind3.textContent = data.daily[3].wind_speed+"MPH";
+        humity3.textContent = data.daily[3].humidity+"%";
         //date4.textContent= 
-        temp0.textContent = data.daily[4].temp.day+"F";
-        wind0.textContent = data.daily[4].wind_speed+"MPH";
-        humity0.textContent = data.daily[4].humidity+"%";
+        temp4.textContent = data.daily[4].temp.day+"F";
+        wind4.textContent = data.daily[4].wind_speed+"MPH";
+        humity4.textContent = data.daily[4].humidity+"%";
       });
     } else {
       alert("Error: " + response.statusText);

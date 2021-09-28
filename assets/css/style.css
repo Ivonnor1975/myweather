@@ -24,7 +24,12 @@ body {
   font-size: 16px;
 }
 
-h1,
+h1{
+    font-weight: 700;
+    margin: 0;
+    color: var(--dark);
+    line-height: 1.25;
+}
 h2
 {
   font-weight: 700;

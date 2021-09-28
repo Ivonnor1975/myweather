@@ -1,19 +1,21 @@
 # Weather Dashboard
 
-It is a simple calendar application that allows a user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+This application allows a traveler to see the weather for multiple cities. 
 
-The starter code uses the Moment.js (Links to an external site.) A library to work with date and time.
 
 ![image](https://user-images.githubusercontent.com/88918693/135169987-b946e4a3-bd78-4f32-a5df-209d1e547644.png)
 
 
 # Instruction
-Type a task on the block of time. Make sure, you click on the button Save to store your task. 
-Click anywhere inside the button, avoiding to click the icon save itself. The icon won't responde to save the task. 
+A user can search for a city. Then it is presented with current and future conditions for that city and that city is added to the search history. 
+ThenN the user is presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index. 
+Also, it is presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, the wind speed, and the humidity.
+
+If the user clicks on a city in the search history, then the user is again presented with current and future conditions for that city.
 
 
-The website is published at https://ivonnor1975.github.io/Taskcontroller/
+The website is published at 
 
-Built With HTML, CSS, bootstrap, Java Script and Jquery.
+Built With HTML, CSS,bootstrap, Java Script, Moment.js and Jquery.
 
 ©️2021 Ivonne, Inc Contribution Made with ❤️ by [Ivonne]

@@ -102,6 +102,15 @@ var getmoredetails = function(citylat, citylon,cityname) {
         temp.textContent = data.current.temp+" °F";
         wind.textContent = data.current.wind_speed+"MPH";
         humity.textContent = data.current.humidity+"%";
+        if (data.current.uvi <= 5 ){
+            $("#uvindex").css("background", "green");
+        }
+        if (data.current.uvi > 5 && data.current.uvi <=10  ){
+          $("#uvindex").css("background", "orange");
+        }
+        if (data.current.uvi >= 11){
+          $("#uvindex").css("background", "red");
+        }
         uvindex.textContent= data.current.uvi;
         //Next five days-day 1
         day0.textContent= moment().add(1, 'days').format('l');

@@ -3,8 +3,7 @@
 This application allows a traveler to see the weather for multiple cities. 
 
 
-![image](https://user-images.githubusercontent.com/88918693/135169987-b946e4a3-bd78-4f32-a5df-209d1e547644.png)
-
+![image](https://user-images.githubusercontent.com/88918693/135183459-0a14333f-6ad1-4321-a1e7-07ab799acd54.png)
 
 # How does it work?
 A user can search for a city. Then it is presented with current and future conditions for that city and that city is added to the search history. 
